@@ -4,6 +4,7 @@ import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
 import AppLoading from "expo-app-loading";
 import { ThemeProvider } from "styled-components/native";
 import theme from "@src/theme";
+import { Signin } from "@src/screens/Signin/Signin";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -15,5 +16,9 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return <ThemeProvider theme={theme}></ThemeProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      <Signin />
+    </ThemeProvider>
+  );
 }
